@@ -2,7 +2,7 @@
 rm(list = ls())
 sourceDir <- "~/Documents/Research/SpeciationGenomics/CriticalTransitionsWithVasilis/"
 setwd(sourceDir)
-baseDirs <- c("AbruptRuns", "GradualRuns", "NeutralRuns")
+baseDirs <- c("AbruptRuns", "GradualRuns", "NeutralRuns", "AbruptRuns_s0.02")
 dirNames <- paste("RunsFromHD2/", baseDirs, "/", sep = "")
 
 #######################################################
