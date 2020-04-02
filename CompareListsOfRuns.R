@@ -67,23 +67,27 @@ summary(allData$SD_MOVE)
 hist(allData$SD_MOVE)
 
 require(dplyr)
-s_vals_freqs <- allData %>% 
-  group_by( MEAN_S ) %>% 
-  summarize( Freq = n() ) %>% 
-  arrange( desc(Freq) )
-head(s_vals_freqs)
 
-m_vals_freqs <- allData %>% 
-  group_by( SD_MOVE ) %>% 
-  summarize( Freq = n() ) %>% 
-  arrange( desc(Freq) )
-head(m_vals_freqs)
-
-m_and_s_vals_freqs <- allData %>% 
-  group_by( MEAN_S, SD_MOVE ) %>% 
-  summarize( Freq = n() ) %>% 
-  arrange( desc(Freq) )
-print(m_and_s_vals_freqs, n = 30)
+############################
+## SOME INITIAL EXPLORATION: 
+############################
+# s_vals_freqs <- allData %>% 
+#   group_by( MEAN_S ) %>% 
+#   summarize( Freq = n() ) %>% 
+#   arrange( desc(Freq) )
+# head(s_vals_freqs)
+# 
+# m_vals_freqs <- allData %>% 
+#   group_by( SD_MOVE ) %>% 
+#   summarize( Freq = n() ) %>% 
+#   arrange( desc(Freq) )
+# head(m_vals_freqs)
+# 
+# m_and_s_vals_freqs <- allData %>% 
+#   group_by( MEAN_S, SD_MOVE ) %>% 
+#   summarize( Freq = n() ) %>% 
+#   arrange( desc(Freq) )
+# print(m_and_s_vals_freqs, n = 30)
 
 # So, we have lots of combos for the following:
 # Should be abrupt divergence: s = 0.02, m = 0.1, 1021 runs
@@ -96,6 +100,9 @@ print(m_and_s_vals_freqs, n = 30)
 #       27  0     0.00001     33
 #       28  0     0.000001    30
 
+#############################################################
+## Getting more specific about values of multiple parameters:
+#############################################################
 m_and_s_more <- allData %>% 
   group_by( MEAN_S, SD_MOVE, INITIAL_POPULAION_SIZE, END_PERIOD_ALLOPATRY, MUTATIONS_PER_GENERATION, hdsource ) %>% 
   summarize( Freq = n() ) %>% 
@@ -103,9 +110,9 @@ m_and_s_more <- allData %>%
 print(m_and_s_more[m_and_s_more$END_PERIOD_ALLOPATRY == -1, ], n = 100)
 
 # indexes of that one to check out:
-# abrupt: 7, 11, 
-# gradual: 8
-# none, neutral: 31, 35, 39
+# abrupt: 7, 11; s = 0.01 or 0.02, m = 0.1
+# gradual: 8; s = 0.02, m = 0.01
+# none, neutral: 31, 35, 39; s = 0, m = 0.1 or 0.01 or 0.001
 redo <- FALSE  # put in as a safety to avoid overwriting unless we really want to overwrite
 setwd("~/Documents/Research/SpeciationGenomics/bu2s/bu2s_neutral_runs/FromOldHardDrives/")
 if ( redo ) {
