@@ -149,7 +149,7 @@ neutralRows <- getCombosIwant( neutralCombos, allData )
 
 redo <- F
 if ( redo ) {
-  write.csv(abruptRows, "AbruptRuns.csv", row.names = F)
-  write.csv(gradualRows, "GradualRuns.csv", row.names = F)
-  write.csv(neutralRows, "NeutralRuns.csv", row.names = F)
+  write.csv(abruptRows, "ParametersForAbruptRuns.csv", row.names = F)
+  write.csv(gradualRows, "ParametersForGradualRuns.csv", row.names = F)
+  write.csv(neutralRows, "ParametersForNeutralRuns.csv", row.names = F)
 }
