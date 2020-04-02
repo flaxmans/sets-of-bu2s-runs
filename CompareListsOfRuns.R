@@ -113,8 +113,8 @@ print(m_and_s_more[m_and_s_more$END_PERIOD_ALLOPATRY == -1, ], n = 100)
 # abrupt: 7, 11; s = 0.01 or 0.02, m = 0.1
 # gradual: 8; s = 0.02, m = 0.01
 # none, neutral: 31, 35, 39; s = 0, m = 0.1 or 0.01 or 0.001
-redo <- FALSE  # put in as a safety to avoid overwriting unless we really want to overwrite
-setwd("~/Documents/Research/SpeciationGenomics/bu2s/bu2s_neutral_runs/FromOldHardDrives/")
+redo <- T  # put in as a safety to avoid overwriting unless we really want to overwrite
+setwd("~/Documents/Research/SpeciationGenomics/CriticalTransitionsWithVasilis/")
 if ( redo ) {
   abruptCombos <- (m_and_s_more[m_and_s_more$END_PERIOD_ALLOPATRY == -1, ])[c(7,11), ]
   gradualCombo <- (m_and_s_more[m_and_s_more$END_PERIOD_ALLOPATRY == -1, ])[8, ]
@@ -147,7 +147,7 @@ abruptRows <- getCombosIwant( abruptCombos, allData )
 gradualRows <- getCombosIwant( gradualCombo, allData )
 neutralRows <- getCombosIwant( neutralCombos, allData )
 
-redo <- FALSE
+redo <- T
 if ( redo ) {
   write.csv(abruptRows, "AbruptRuns.csv", row.names = F)
   write.csv(gradualRows, "GradualRuns.csv", row.names = F)
