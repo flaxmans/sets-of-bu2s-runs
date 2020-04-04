@@ -14,6 +14,7 @@ Datasets are divided into three main sets:
 #### Comma-separated data files:
 + '`AbruptParameterCombinations.csv`', '`GradualParameterCombinations.csv`', and '`NeutralParameterCombinations.csv`':  These small .csv files give the specific parameter combinations that were used to filter through over 9000 runs of the `bu2s` model to choose the runs that comprise the datasets.
 + '`FullListOfAbruptRuns.csv`', '`FullListOfGradualRuns.csv`', and '`FullListOfNeutralRuns.csv`': These .csv files have the full list of all parameters for every individual run included in the datasets.
++ **A note about parameter names**:  What we refer to as _m_ (migration rate) and _s_ (mean selection coefficient of selected mutations) in written work are coded in the model, and in the parameter spreadsheets, as `SD_MOVE` and `MEAN_S`, respectively.
 
 #### R Scripts:
 + '`CompareEffectiveMigRates.R`': Script used to make PDF figures (see below) that show the behavior of the different categories of runs.
