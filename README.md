@@ -20,9 +20,10 @@ Datasets are divided into three main sets:
 + '`CompareEffectiveMigRates.R`': Script used to make PDF figures (see below) that show the behavior of the different categories of runs.
 + '`CompareListsOfRuns.R`': Script that was used to create the filtering of all available runs to limit it to the sets now archived at the Google Drive link above.
 
-#### Shell Scripts (probably don't makes sense for anyone but Sam):
-+ '`ReduceDirectorySizes.sh`': Shell script used to delete some data files in order to reduce overall size of archives
-+ '`TransferRunsToHereFromHD2.sh`':  Shell script used to pull data from hard drives containing all the original data
+#### Shell Scripts:
++ '`ReduceDirectorySizes.sh`': Shell script used to delete some data files in order to reduce overall size of archives (no need to run anymore; those files are already deleted in the archive linked above)
++ '`TransferRunsToHereFromHD2.sh`':  Shell script used to pull data from hard drives containing all the original data (only works for Sam when connected to the big hard drive of runs)
++ '`BU2SparameterParsing.sh`': Shell script that CAN be used to convert `parameters.m` files (which are MATLAB-readable scripts) into scripts that are readable by `R`.  Comments in the script explain it briefly.  
 
 #### PDF visualizations:
 + '`ContrastingRunsEffectiveMigRates.pdf`': Contrasting three sets of runs by their effective migration rates over time.  Subset of the next PDF.
